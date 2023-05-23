@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Reversing";
+}
+
+<h3 class="center">@ViewData["Title"]</h3>
+
+<form asp-action="ReverseName" method="post" class="form">
+    <div class="form-group">
+        <label for="text" >Type Your Text:</label>
+        <input type="text" name="name" />
+    </div>
+    <input type="submit" value="Reverse" />
+</form>
+
+@if (ViewBag.Message != null)
+{
+    @if (ViewBag.Message == "Check Your Name")
+    {
+        <p class="result">Check Your Text</p>
+    }
+    else
+    {
+        <h4 class="result">reversed Text: </h4>
+        <h4 class="result">@ViewBag.Message</h4>
+    }
+}
